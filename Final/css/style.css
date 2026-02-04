@@ -1,0 +1,132 @@
+@charset "utf-8";
+
+a {
+	color: #134a8e;
+}
+
+a:hover {
+	color: #0d3464;
+	text-decoration: none;
+}
+
+header,
+nav,
+footer {
+	text-align: center;
+}
+
+h1 {
+	width: 300px;
+	margin: 40px auto;
+	padding: 30px;
+	border: none;
+	background-color: transparent;
+	color: #134a8e;
+	font-size: 300%;
+	text-align: center;
+	line-height: 1;
+	border-radius: 0;
+	text-shadow: none;
+	box-shadow: none;
+	background-image: none;
+	font-family: 'Inter', sans-serif;
+	font-weight: 700;
+}
+
+#contents {
+	width: 798px;
+	margin: 40px auto;
+	padding: 40px 80px;
+	background-color: #fff;
+
+}
+
+
+.entryTable {
+	text-align: left;
+	width: 100%;
+	margin-bottom: 30px;
+	border: 1px solid #d1e9ff;
+	border-collapse: collapse;
+}
+
+.entryTable th,
+.entryTable td {
+	padding: 10px 20px;
+	border: 1px solid #d1e9ff;
+}
+
+.entryTable th {
+	width: 10em;
+	background-color: #e3f2fd;
+	text-align: left;
+	color: #1e3a5f;
+}
+
+.entryTable caption {
+	margin-bottom: 10px;
+}
+
+.entryTable input[type="text"],
+.entryTable input[type="email"],
+.entryTable input[type="password"],
+.entryTable textarea {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+	font-size: 1em;
+	border-radius: 4px;
+}
+
+.entryTable input[type="text"]:focus,
+.entryTable input[type="email"]:focus,
+.entryTable input[type="password"]:focus,
+.entryTable textarea:focus {
+	background-color: #fff;
+	outline: none;
+	border-color: #134a8e;
+	box-shadow: 0 0 0 2px rgba(19, 74, 142, 0.1);
+	border-left: 1px solid #134a8e;
+}
+
+label,
+input,
+textarea,
+select {
+	cursor: pointer;
+}
+
+.entryBtn {
+	text-align: center;
+}
+
+.entryBtn input {
+	width: 200px;
+	margin: 0 10px;
+	padding: 10px;
+	font-size: 1em;
+	background: #f0f7ff;
+	border: 1px solid #134a8e;
+	color: #134a8e;
+	border-radius: 6px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.entryBtn input[type="submit"] {
+	background: #134a8e;
+	color: #fff;
+}
+
+.entryBtn input:hover {
+	opacity: 1;
+	transform: translateY(-2px);
+	box-shadow: 0 4px 10px rgba(19, 74, 142, 0.2);
+}
+
+
+.entry-note {
+	text-align: center;
+	margin-bottom: 20px;
+}

@@ -1,0 +1,53 @@
+@charset "utf-8";
+
+
+body {
+    background-color: #e6f0fa;
+    margin: 0;
+    padding: 0;
+    padding-top: 100px;
+    font-family: 'Inter', "微軟正黑體", sans-serif;
+    color: #333;
+}
+
+
+#header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 10px 0;
+    z-index: 999;
+}
+
+.clearheader::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* ===== Contents（置中白底卡片風）===== */
+#contents {
+    width: 980px;
+    margin: 40px auto 0 auto;
+    /* ← 加上 40px 的上距離 */
+    padding: 40px 80px;
+    background: #ffffff;
+    border-radius: 18px;
+    border: 1px solid #d1e9ff;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+
+/* ===== Footer ===== */
+#footer {
+    text-align: center;
+    padding: 20px 0;
+    color: #555;
+    font-size: 14px;
+}

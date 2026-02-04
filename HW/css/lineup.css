@@ -1,0 +1,316 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+:root {
+    --blue-primary: #134a8e;
+    --blue-light: #e8f1f9;
+    --text-dark: #1a1a1a;
+    --text-gray: #666;
+    --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --card-hover-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    --maple-red: #c8102e;
+}
+
+body {
+    background-color: #f5f8fa;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.lineup-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    position: relative;
+}
+
+
+.lineup-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 50px;
+    letter-spacing: -0.02em;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.lineup-title::before {
+    content: '🍁';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -60px;
+    font-size: 3rem;
+    opacity: 0.9;
+    animation: mapleFloat 3s ease-in-out infinite;
+}
+
+.lineup-title::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, var(--maple-red), transparent);
+    border-radius: 2px;
+}
+
+/* Decorative maple leaves on sides */
+.lineup-container::before,
+.lineup-container::after {
+    content: '🍁';
+    position: absolute;
+    font-size: 2rem;
+    opacity: 0.15;
+}
+
+.lineup-container::before {
+    left: 5%;
+    top: 50px;
+    transform: rotate(-15deg);
+}
+
+.lineup-container::after {
+    right: 5%;
+    top: 50px;
+    transform: rotate(15deg);
+}
+
+
+
+.players-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+    justify-items: center;
+}
+
+.player-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
+    max-width: 320px;
+    cursor: pointer;
+}
+
+.player-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--card-hover-shadow);
+}
+
+.player-image-container {
+    background: linear-gradient(135deg, #0679de 0%, #f8fbfd 100%);
+    padding: 32px 20px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 280px;
+    position: relative;
+}
+
+.player-image-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 0%, rgba(19, 74, 142, 0.05) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.player-image {
+    width: 100%;
+    height: auto;
+    max-width: 200px;
+    object-fit: contain;
+    position: relative;
+    z-index: 1;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.08));
+}
+
+.player-info {
+    padding: 24px 20px;
+    text-align: center;
+}
+
+.player-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin: 0 0 16px 0;
+    letter-spacing: -0.01em;
+}
+
+.player-details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+}
+
+.player-details span {
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-gray);
+    line-height: 1.5;
+}
+
+.player-lineup {
+    color: var(--blue-primary);
+    font-size: 1.125rem;
+}
+
+.player-position {
+    background: var(--blue-light);
+    color: var(--blue-primary);
+    padding: 4px 16px;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+.player-number {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+@media (max-width: 768px) {
+    .lineup-container {
+        padding: 24px 16px;
+    }
+    
+    .lineup-title {
+        font-size: 1.75rem;
+        margin-bottom: 40px;
+    }
+    
+    .lineup-title::before {
+        font-size: 2rem;
+        top: -45px;
+    }
+    
+    .lineup-container::before,
+    .lineup-container::after {
+        font-size: 1.5rem;
+    }
+    
+    .players-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .player-card {
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .players-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.player-card {
+    animation: fadeInUp 0.5s ease-out forwards;
+    opacity: 0;
+}
+
+.player-card:nth-child(1) { animation-delay: 0.1s; }
+.player-card:nth-child(2) { animation-delay: 0.2s; }
+.player-card:nth-child(3) { animation-delay: 0.3s; }
+.player-card:nth-child(4) { animation-delay: 0.4s; }
+.player-card:nth-child(5) { animation-delay: 0.5s; }
+.player-card:nth-child(6) { animation-delay: 0.6s; }
+.player-card:nth-child(7) { animation-delay: 0.7s; }
+.player-card:nth-child(8) { animation-delay: 0.8s; }
+.player-card:nth-child(9) { animation-delay: 0.9s; }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+img{
+    border-radius: 16px;
+}
+
+    .pagination {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.page-btn {
+    display: inline-block;
+    margin: 0 5px;
+    padding: 8px 12px;
+    border: 1px solid #0073e6;
+    border-radius: 5px;
+    background-color: #f0f8ff;
+    color: #0073e6;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+.page-btn:hover {
+    background-color: #0073e6;
+    color: #fff;
+    cursor: pointer;
+}
+
+.page-btn.current {
+    background-color: #0073e6;
+    color: #fff;
+    cursor: default;
+    font-weight: bold;
+}
+.pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 30px auto;
+        max-width: 100%;
+    }
+
+    .page-btn {
+        display: inline-block;
+        padding: 8px 12px;
+        border: 1px solid #0073e6;
+        border-radius: 5px;
+        background-color: #f0f8ff;
+        color: #0073e6;
+        text-decoration: none;
+        font-weight: bold;
+        transition: all 0.2s ease;
+    }
+
+    .page-btn:hover {
+        background-color: #0073e6;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    .page-btn.current {
+        background-color: #0073e6;
+        color: #fff;
+        cursor: default;
+        font-weight: bold;
+    }
